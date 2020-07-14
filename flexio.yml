@@ -1,0 +1,28 @@
+title: Pipl
+description: Functions for accessing information from Pipl
+
+image:
+  src: https://static.flex.io/assets/logos/pipl.png
+  alt: Pipl logo
+
+functions:
+  - path: pipl-enrich-people.py
+
+prompts:
+  - element: form
+    name: form_api_key
+    title: Pipl API key
+    description: |
+      Use your Pipl API key to access the Pipl API
+    class: el-form--cozy el-form__label-tiny
+    rules:
+      pipl_api_key:
+        - required: true
+          message: Please enter a valid API key to continue.
+    form_items:
+      - element: input
+        type: text
+        name: pipl_api_key
+        label: API key
+        placeholder: API key
+        value: ''

@@ -145,7 +145,7 @@ def flexio_handler(flex):
 
     properties = [p.lower().strip() for p in input['properties']]
     if len(properties) == 1 and (properties[0] == '' or properties[0] == '*'):
-        properties = content
+        properties = list(content.values())
     else:
         properties = [content.get(p) or '' for p in properties]
 

@@ -121,15 +121,6 @@ def flexio_handler(flex):
     # get the response data as a JSON object
     response = requests_retry_session().get(url)
 
-    # sometimes results are pending; for these, return text indicating
-    # the result is pending so the user can refresh later to look for
-    # the completed result
-    status_code = response.status_code
-    if status_code == 202:
-        flex.output.content_type = "application/json"
-        flex.output.write([['Result Pending...']])
-        return
-
     # if a result can't be found or wasn't formatted properly,
     # return a blank (equivalent to not finding a bad email address)
     if status_code == 400 or status_code == 404 or status_code == 422:

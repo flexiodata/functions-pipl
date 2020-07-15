@@ -112,6 +112,7 @@ def flexio_handler(flex):
     # https://docs.pipl.com/reference#errors (for error info)
     url_query_params = {
         'email': input['email'].lower().strip(),
+        'top_match': True,
         'key': auth_token.strip()
     }
     url_query_str = urllib.parse.urlencode(url_query_params)

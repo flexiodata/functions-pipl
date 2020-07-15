@@ -120,6 +120,7 @@ def flexio_handler(flex):
 
     # get the response data as a JSON object
     response = requests_retry_session().get(url)
+    status_code = response.status_code
 
     # if a result can't be found or wasn't formatted properly,
     # return a blank (equivalent to not finding a bad email address)
